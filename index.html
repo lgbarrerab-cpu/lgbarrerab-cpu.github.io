@@ -117,6 +117,20 @@
             color: #999;
             font-size: 12px;
         }
+
+        .project-img { width: 100%; border-radius: 6px; margin: 15px 0; border: 1px solid #e0e0e0; display: block; }
+
+        .logros {
+            background: #0A8E5C;
+            color: white;
+            padding: 30px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
+        .logros h2 { font-size: 22px; margin-bottom: 20px; }
+        .logros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .logros-grid .stat { font-size: 28px; font-weight: 700; display: block; }
+        .logros-grid .label { font-size: 13px; opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -164,12 +178,24 @@
         </div>
     </section>
 
+
+    <section class="logros">
+        <h2>Logros destacados</h2>
+        <div class="logros-grid">
+            <div><span class="stat">35%</span><span class="label">Margen global identificado en el dashboard de Power BI (Andes Retail Group)</span></div>
+            <div><span class="stat">+3.39 pp</span><span class="label">Mejora de conversión validada estadísticamente en experimento A/B (p &lt; 0.001)</span></div>
+            <div><span class="stat">9</span><span class="label">Distribuciones de probabilidad comparadas en la herramienta de análisis hidrológico (IDF)</span></div>
+            <div><span class="stat">9.39%</span><span class="label">Conversión total de embudo calculada con SQL (CTEs y funciones de ventana)</span></div>
+        </div>
+    </section>
+
     <section>
         <h2 style="font-size: 26px; margin: 40px 0 30px; border-bottom: 2px solid #0A8E5C; padding-bottom: 10px;">Proyectos destacados</h2>
 
         <article class="project">
             <h3>Dashboard de desempeño comercial en Power BI — Andes Retail Group</h3>
             <p class="project-meta">Power BI · Excel · TripleTen · 2026</p>
+            <img src="assets/dashboard-powerbi.png" alt="Dashboard de Power BI: ingresos totales, ganancia, pedidos y margen por país, con evolución mensual 2024-2025" class="project-img" loading="lazy">
             <p><strong>Contexto:</strong> dashboard de dos páginas (resumen ejecutivo y análisis detallado) sobre 5,000 pedidos 2024–2025 de Perú, Chile y Colombia (dataset ficticio del bootcamp).</p>
             <div class="badges">
                 <span class="badge power-bi">Power BI</span>
@@ -184,7 +210,25 @@
             </ul>
             <p><strong>Evidencia:</strong> Archivo de Power BI disponible bajo solicitud.</p>
         </article>
-
+        <article class="project">
+            <h3>Análisis de frecuencia hidrológica y curvas IDF</h3>
+            <p class="project-meta">Python · SciPy · Matplotlib · Ingeniería hidráulica · 2026</p>
+            <img src="assets/idf-curvas-frecuencia.png" alt="Curvas de frecuencia de precipitación máxima en 24 horas, estación Aeropuerto Yopal: 9 distribuciones ajustadas frente a datos observados" class="project-img" loading="lazy">
+            <p><strong>Contexto:</strong> herramienta propia en Python que construye curvas Intensidad–Duración–Frecuencia (IDF) a partir de estaciones pluviométricas del IDEAM, para el diseño de infraestructura hidráulica en los Llanos Orientales. Desarrollada en 2026 con apoyo de herramientas de IA. El repositorio incluye el código y dos casos de ejemplo (Yopal y La Chaparrera).</p>
+            <div class="badges">
+                <span class="badge python">Python</span>
+                <span class="badge ">Estadística</span>
+                <span class="badge ">Automatización</span>
+            </div>
+            <p><strong>Hallazgos y resultados:</strong></p>
+            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li>Ajuste de 9 distribuciones con pruebas AIC, BIC, Kolmogorov-Smirnov y Anderson-Darling, e intervalos de confianza por bootstrap</li>
+                <li>Seis métodos IDF comparados: Chen, Díaz-Granados/INVIAS, Sherman, Bernard, Bell y Kothyari-Garde</li>
+                <li>Salida automática: Excel de 30 hojas, PDF de gráficas y memoria de cálculo en Word</li>
+                <li>Estación Aeropuerto Yopal (46 años de registro): Log-Pearson III y precipitación máxima en 24 horas de 177 mm para un periodo de retorno de 25 años</li>
+            </ul>
+            <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/Analisis-hidrologico-IDF" target="_blank" rel="noopener">Analisis-hidrologico-IDF</a></p>
+        </article>
         <article class="project">
             <h3>Experimento A/B en una landing page</h3>
             <p class="project-meta">Python · SciPy (prueba t, chi-cuadrado) · TripleTen · 2026</p>
@@ -202,7 +246,6 @@
             </ul>
             <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/Experimento-AB-landing-page" target="_blank" rel="noopener">Experimento-AB-landing-page</a></p>
         </article>
-
         <article class="project">
             <h3>NovaRetail+ — Factores de comportamiento, abandono e ingreso</h3>
             <p class="project-meta">Python · Pandas · SciPy · Correlaciones · V de Cramér · TripleTen · 2026</p>
@@ -220,8 +263,6 @@
             </ul>
             <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/NovaRetail-comportamiento-clientes" target="_blank" rel="noopener">NovaRetail-comportamiento-clientes</a></p>
         </article>
-
-
         <article class="project">
             <h3>Embudo de conversión y cohortes de retención — E-commerce</h3>
             <p class="project-meta">SQL (CTEs, funciones de ventana) · Python · DuckDB · 2026</p>
@@ -239,7 +280,6 @@
             </ul>
             <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/Ecommerce-funnel-analysis" target="_blank" rel="noopener">Ecommerce-funnel-analysis</a></p>
         </article>
-
         <article class="project">
             <h3>Movilidad urbana y desarrollo económico — Ciudades de LATAM</h3>
             <p class="project-meta">Python · Pandas · SciPy · TomTom Traffic Index · OCDE · TripleTen · 2026</p>
@@ -257,7 +297,6 @@
             </ul>
             <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/Movilidad-LATAM" target="_blank" rel="noopener">Movilidad-LATAM</a></p>
         </article>
-
         <article class="project">
             <h3>Análisis estadístico de clientes — ConnectaTel</h3>
             <p class="project-meta">Python · Pandas · Seaborn · Estadística descriptiva · TripleTen · 2026</p>
@@ -275,27 +314,6 @@
             </ul>
             <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/Analisis-estadistico-empresa-de-telecomunicaciones" target="_blank" rel="noopener">Analisis-estadistico-empresa-de-telecomunicaciones</a></p>
         </article>
-
-        <article class="project">
-            <h3>Análisis de frecuencia hidrológica y curvas IDF</h3>
-            <p class="project-meta">Python · SciPy · Matplotlib · Ingeniería hidráulica · 2026</p>
-            <p><strong>Contexto:</strong> herramienta propia en Python que construye curvas Intensidad–Duración–Frecuencia (IDF) a partir de estaciones pluviométricas del IDEAM, para el diseño de infraestructura hidráulica en los Llanos Orientales. Desarrollada en 2026 con apoyo de herramientas de IA. El repositorio incluye el código y dos casos de ejemplo (Yopal y La Chaparrera).</p>
-            <div class="badges">
-                <span class="badge python">Python</span>
-                <span class="badge ">Estadística</span>
-                <span class="badge ">Automatización</span>
-            </div>
-            <p><strong>Hallazgos y resultados:</strong></p>
-            <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li>Ajuste de 9 distribuciones con pruebas AIC, BIC, Kolmogorov-Smirnov y Anderson-Darling, e intervalos de confianza por bootstrap</li>
-                <li>Seis métodos IDF comparados: Chen, Díaz-Granados/INVIAS, Sherman, Bernard, Bell y Kothyari-Garde</li>
-                <li>Salida automática: Excel de 30 hojas, PDF de gráficas y memoria de cálculo en Word</li>
-                <li>Estación Aeropuerto Yopal (46 años de registro): Log-Pearson III y precipitación máxima en 24 horas de 177 mm para un periodo de retorno de 25 años</li>
-            </ul>
-            <p><strong>Repositorio:</strong> <a href="https://github.com/lgbarrerab-cpu/Analisis-hidrologico-IDF" target="_blank" rel="noopener">Analisis-hidrologico-IDF</a></p>
-        </article>
-
-
         <article class="project">
             <h3>Dashboards en Power BI y Tableau</h3>
             <p class="project-meta">Power BI · Tableau · TripleTen · 2026</p>
